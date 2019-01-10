@@ -1,9 +1,11 @@
+# This profile configures a Postgresql Master
 class profile::pg_master {
-  class { 'puppetdb::database::postgresql':
+  class { '::puppetdb::database::postgresql':
     database_name     => 'puppetdb',
     database_username => 'puppetdbuser',
     database_password => 'Pupp3t-DB-V00D00',
-    listen_addresses => '*',
+    postgres_version  => '9.6',
+    listen_addresses  => '*',
     # manage_package_repo => false,
   }
 

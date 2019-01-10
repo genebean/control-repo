@@ -1,3 +1,4 @@
+# This profile configres an HA Proxy node for Puppet and Foreman.
 class profile::proxy_puppet {
   include ::haproxy
   haproxy::listen { 'puppet00':
@@ -94,7 +95,7 @@ class profile::proxy_puppet {
   haproxy::balancermember { 'foreman-backend8888':
     listening_service => 'foreman-frontend8888',
     server_names      => 'foreman.localdomain',
-    ipaddresses       => '172.28.128.22',
+    ipaddresses       => '172.28.128.20',
     ports             => '8888',
     options           => 'check',
   }
